@@ -1,0 +1,65 @@
+
+.title_text,
+.title_pill{
+    display: inline;
+}
+
+.de_comnum,
+.de_date{
+    display: inline;
+}
+
+.de_comment_content,
+.de_comment_date{
+    display: inline;
+}
+
+.de_comment_date{
+    float: right;
+}
+
+.de_comnum{
+    float:right;
+}
+
+.de_date{
+    float:right;
+}
+
+.s-textarea {
+    display: block;
+    width: 100%;
+    line-height: 40px;
+    border: none;
+    outline: none;
+    background: #f9f9ff;
+    padding: 0 20px;
+    height: 100px;
+    resize: none;
+}
+
+.de_btn {
+    color: #fff;
+    background: #38a4ff;
+    border: 1px solid transparent;
+  }
+
+.de_btn {
+    display: inline-block;
+    outline: none;
+    line-height: 40px;
+    padding: 0 30px;
+    font-size: .8em;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    border-top-left-radius: 5px; 
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px;
+  }

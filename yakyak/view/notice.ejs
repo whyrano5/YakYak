@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+    <%- include('head') %> 
+
+    <body>
+        <%- include('header') %> 
+        <!-- Header part end-->
+
+        <!-- breadcrumb start-->
+        <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                            <div class="breadcrumb_iner">
+                                <div class="breadcrumb_iner_item text-center">
+                                        <h2>공지사항</h2>
+                                        <p>Notice</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+        <!-- breadcrumb start-->
+        <!--================ 공지사항 ==================-->
+        </br></br></br></br>
+        <section class="contact-section">
+            <div class="container">
+                <div class="row">
+                    <table id="story_table" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>내용</th>
+                                <th>조회수</th>
+                                <th>날짜</th>
+                                <th>댓글수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = (page * page_num) - page_num; i < (page * page_num); i++) {
+                                if(i > length){
+                                    i++;
+                                }
+                                else{ %>
+                                <tr>
+                                    <!-- <td><%=i+1 %></td> -->
+                                    <td><%=list[i].notice_no %></td>
+                                    <td><a id="notice_num" href="notice_detail?num=<%=list[i].notice_no %>"><%=list[i].notice_title %></a></td>
+                                    <td><%=list[i].notice_writer %></td>
+                                    <td><%=list[i].notice_content %></td>
+                                    <td><%=list[i].notice_view %></td>
+                                    <td><%=list[i].notice_date %></td>
+                                    <td><a href='/delete/<%= list[i].r_index %>' >DELETE</a></td>
+                                </tr>
+                                <% }
+                            } %>
+                        </tbody>
+                    </table>
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="/notice?page=<%= 1 %>">&laquo;</a></li>
+                        <% 
+                            var total = parseInt(list.length/page_num)+1;
+                            if(total <= 1){%>
+                                <li class="page-item"><a style="background-color:lightgray;" href="/notice?page=1">1</a></li>
+                            <%}
+                            else if(page<4){
+                                for(var k = 1; k < 8; k++){
+                                    if(k<=total&&k>0){%>
+                                        <li class="page-item"><a <% if(page==k){%> style="background-color:lightgray;" <%} %> href="/notice?page=<%= k %>"><%= k %></a></li>
+                                    <%}
+                                    else{
+                                        continue;;
+                                    }
+                                }
+                            }
+                            else if(page+4>total){
+                                for(var k = total-7 ; k < total+1 ; k++){
+                                    if(k<=total&&k>0){%>
+                                        <li class="page-item"><a <% if(page==k){%> style="background-color:lightgray;" <%} %> href="/notice?page=<%= k %>"><%= k %></a></li>
+                                    <% }
+                                    else{
+                                        continue;
+                                    }
+                                }
+                                }
+                            else{
+                                for(var k = parseInt(page)-3; k < parseInt(page)+4; k++){%>
+                                    <li class="page-item"><a <% if(page==k){%> style="background-color:lightgray;" <%} %> href="/notice?page=<%= k %>"><%= k %></a></li>
+                                <% }
+                            }
+                            %>
+                        <li class="page-item"><a class="page-link" href="/notice?page=<%= total %>">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form_btn">
+                <a href="/notice_write" class="genric-btn info radius" style="font-size: 100%; float:right; margin-right:10%;" > 글쓰기</a>
+            </div>
+        </div>
+
+        <!--================ 공지사항 ==================-->
+
+        <!-- footer part start-->
+        </br></br></br></br>
+
+        <!-- footer part start-->
+        <%- include('footer') %> 
+    </body>
+
+</html>

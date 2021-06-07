@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<%- include('head') %> 
+<body>
+   <!--::header part start::-->
+   <%- include('header') %> 
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item text-center">
+                            <h2>질문게시판</h2>
+                            <p>Question board</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+
+    <!--================ 질문게시판 ==================-->
+    </br>
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+            </br>
+                <form class="write_form" action="/question_update" method='post'>
+                    <table id="story_table" style="width:100%">
+                        <tr>
+                            <td><legend style="font-size: 1.5em; line-height:2.5em;">글 수정</legend></td>
+                        </tr>
+                        <tr style="height:3.5em;">
+                            <td>
+                                <input class="single-input" type="text" id="title" name="title" value="<%=list[0].question_title %>"></br>
+                            </td>
+                        </tr>
+                        <tr style="margin-top:0.05em; height:20em;">
+                            <td>
+                                <textarea style="margin-top:0.05em; height:20em;" name="content" id="content" class="single-textarea" value="<%=list[0].question_content %>"><%=list[0].question_content %></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a type=submit class="genric-btn info radius" onclick="javascript:location.replace('./question_detail?num=<%=list[0].question_no %>');" style="font-size: 100%; float:right; margin-left:1%" >취소</a>
+                                <input type=submit class="genric-btn info radius" style="font-size: 100%; float:right; color:black;"/>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!--================ 질문게시판 ==================-->
+    <%- include('footer') %> 
+</body>
+
+
+</html>

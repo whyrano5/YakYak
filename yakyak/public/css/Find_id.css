@@ -1,0 +1,85 @@
+#jb-container1
+{
+  width: 500px;
+  margin: 100px auto;
+  padding: 10px;
+}
+#jb-header1 {
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align:center;
+}
+#jb-content1
+{
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align:center;
+}
+#nf {
+border: 1px solid skyblue;
+border-radius: Opx;
+position: relative;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+top : -10px;
+height: 40px;
+width: 60%;
+}
+#ef {
+border: 1px solid skyblue;
+border-radius: Opx;
+position: relative;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+height: 40px;
+top : 0px;
+width: 60%;
+}
+#Find_Ibtn{
+border:1px solid skyblue;
+background-color: rgba(0,0,0,0);
+color: skyblue;
+padding: 5px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+position: relative;
+height: 50px;
+top : 10px;
+width: 30%;
+}
+#cancel_btn{
+border:1px solid skyblue;
+background-color: rgba(0,0,0,0);
+color: skyblue;
+padding: 5px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+position: relative;
+height: 50px;
+width: 30%;
+}
+#Find_Ibtn:hover{
+color:white;
+background-color:skyblue;
+}
+#cancel_btn:hover{
+color:white;
+background-color:skyblue;
+}
+@media ( max-width: 480px ) {
+  #jb-container1 {
+    width: auto;
+  }
+  #jb-content1 {
+    float: none;
+    width: auto;
+  }
+}

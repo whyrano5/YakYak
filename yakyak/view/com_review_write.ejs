@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<%- include('head') %> 
+<body>
+   <!--::header part start::-->
+   <%- include('header') %> 
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item text-center">
+                            <h2>리뷰게시판</h2>
+                            <p>Review Bulletin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+
+    <!--================ 리뷰게시판 ==================-->
+    </br>
+    </br>
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+                <form class="write_form" action="/review_write" method='post'>
+                    <table id="story_table" style="width:100%">
+                        <tr class="write_title">
+                            <td><legend style="font-size: 1.5em; line-height:2.5em;">글쓰기</legend></td>
+                        </tr>
+                        <tr title="pill_" style="height:3.5em;">
+                            <select name="약 종류" id="">
+                                <option value="XC">(약 종류 선택 안함)</option>
+                                <% for(var i = 0; i<103; i++){ %>
+                                    <option value="<%= rows2[i].분류명 %>"><%= rows2[i].분류명 %></option>
+                                <% } %>
+                            </select>
+                        </tr>
+                        <tr style="height:3.5em;">
+                        <input class="single-input" type="text" id="title" name="title" placeholder="제목을 입력해 주세요. "></br>
+                        </tr>
+                        <tr style="margin-top:0.05em; height:20em;">
+                            <td>
+                                <textarea style="margin-top:0.05em; height:20em;" name="content" id="summernote" class="single-textarea"  placeholder="내용을 입력해 주세요."></textarea>
+                            </td>
+                        </tr>
+                        <tr style="height:3.5em;">
+                        </tr>
+                        <tr>
+                            <td>
+                                <a type=submit class="genric-btn info radius" onclick="javascript:location.replace('./review');" style="font-size: 100%; float:right; margin-left:1%" >취소</a>
+                                <input type=submit class="genric-btn info radius" style="font-size: 100%; float:right; color:black;"/>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!--================ 리뷰게시판 ==================-->
+    <%- include('footer') %> 
+</body>
+
+</html>

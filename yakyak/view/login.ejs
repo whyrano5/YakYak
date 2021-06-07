@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>로그인</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="icon" href="./img/yak_small_logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="jb-container3">
+      <div id="jb-header3">
+        <a href="./index"><img src="./img/yak_logo.png"alt="이미지 오류" width="300" height="120"></a>
+      </div>
+      <form action="/login" method='post'>
+        <div id="jb-content3">
+          <input type="text" name="id" id ="id" placeholder="아이디" >
+          <br>
+        <input type="password" name="pw" id = "pw"placeholder="비밀번호"><br>
+          <input type="submit" name="login_btn" id = "login_btn" value="로그인">
+          <p><a href="./Find_id" target="_top" id = idlink>아이디 찾기</a></p>
+          <p><a href="./Find_pw" target="_top" id = pwlink>비밀번호 찾기</a></p>
+          <p><a href="./sign" target="_top" id = joinlink>회원가입</a></p>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

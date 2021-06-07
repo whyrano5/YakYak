@@ -1,0 +1,56 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>YakYak</title>
+    <link rel="icon" href="./img/yak_small_logo.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="./css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="./css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="./css/flaticon.css">
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" href="./css/all.min.css">
+    <!-- magnific CSS -->
+    <link rel="stylesheet" href="./css/magnific-popup.css">
+    <link rel="stylesheet" href="./css/gijgo.min.css">
+    <!-- niceselect CSS -->
+    <link rel="stylesheet" href="./css/nice-select.css">
+    <!-- slick CSS -->
+    <link rel="stylesheet" href="./css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/slideshow.css">
+    <script>
+        jQuery(function($){//DataTables는 HTML의 <table>을 데이터 그리드 형식으로 사용하기 위한 라이브러리
+            $("#story_table").DataTable({
+              // 표시 건수기능 숨기기
+               lengthChange: false,
+               // 검색 기능 숨기기
+               //searching: false,
+               // 정렬 기능 숨기기
+               ordering: false,
+               // 정보 표시 숨기기
+               info: false,
+               // 페이징 기능 숨기기
+               //paging: false
+            });
+        });
+        $(document).ready(function() {
+       //여기 아래 부분
+           $('#summernote').summernote({
+              height: 300,                 // 에디터 높이
+              minHeight: null,             // 최소 높이
+              maxHeight: null,             // 최대 높이
+              focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
+              lang: "ko-KR",               // 한글 설정
+              placeholder: '최대 2048자까지 쓸 수 있습니다'   //placeholder 설정
+          
+           });
+        });
+    </script>
+</head>

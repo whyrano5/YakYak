@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>HTML Layouts</title>
+   <link rel="stylesheet" href="./css/sign.css">
+   <link rel="icon" href="./img/yak_small_logo.png">
+   <!-- Fontawesome -->
+   <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!-- jQuery -->
+   <script type="text/javascript" src="../../js/jquery-1.8.3.min.js"></script>
+   <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+   <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <div id="jb-container4">
+    <div id="jb-header4">
+      <img src="./img/yak_logo.png"alt="이미지 오류" width="300" onclick="location.href='/index' " height="120">
+      <h2>회원가입</h2>
+    </div>
+    <div id="jb-content4">
+    <form action="/sign" method='post'>
+          <table style="border: 0px solid black; margin-left: auto; margin-right: auto;">
+            <div class="line">
+                <div class="margin">
+                  <div class="s-12 m-12 l-6">
+                    <input name="id" class="id" id="id" placeholder="   아이디" title="id" type="text"/>
+                     <!---- <button id="idc" type="submit" onclick="requestAjax(url)" >중복확인</button> -->
+                  </div>
+            </div>
+            </div>
+            <div class="line">    
+              <div class="s-12">
+                <div class="main">
+                  <br>
+                  <input id="pw" name="pw" class="pw" placeholder="   비밀번호" title="pw" type="password"/>
+                  <br>
+                  <i class="fa fa-eye fa-lg"></i>
+                  <div class="check_font" id="pw_check" style="color:red;"></div>
+                </div>
+              </div><br>
+              <div class="s-12">
+                <div class="main">
+                  <input id="pw2" name="pw2" class="pw2" placeholder="   비밀번호 확인" title="pw2" type="password"/>
+                  <i class="fa fa-eye fa-lg"></i>
+                  <div class="check_font" id="pw2_check" style="color:red;"></div>
+                  <br>
+                </div>
+              </div>
+              <div class="s-12">
+                <input id="name" name="name" class="name" placeholder="   이름" title="name" type="text" />
+                <div class="check_font" id="name_check" style="color:red;"></div>
+                <br>
+              </div>
+              <div class="s-12">
+                <input id="email" name="email" class="email" placeholder="   이메일" title="email" type="text"/>
+                <div class="check_font" id="phone_check" style="color:red;"></div>
+                <br>
+              </div>
+              <div class="">
+                <button id="join" class="button border-radius text-white background-primary" onclick="check();" type="submit">가입</button>
+                <a type=submit id="cancel" class="de_btn" style="height:38px;" onclick="javascript:location.replace('./login');">취소</a>
+                <!-- <button id="cancel" class="button border-radius text-white background-primary" type="submit" onclick="javascript:history.back();">취소</button> -->
+              </div>
+            </div>  
+          </table>   
+      </form>
+    </div>
+  </div>
+</body>
+<script>
+
+function sendIdChk(){
+        var id = document.getElementById('id').value;
+        if(id==null || id==""){
+            alert('아이디를 입력해 주세요.');
+            $('#id').focus();
+            return;
+        }else{
+            requestAjax("test.do?id="+id);
+        }
+    }
+function requestAjax(url){
+    var idchkf = document.getElementById("idc");
+    jQuery.ajax({
+         type :'post'
+            , url:url
+            , dataType:"text"
+            , cache : false 
+            , success:function(res){
+                if(res=='OK'){
+                    $('#idc').val("true");
+                    alert('사용할 수 있는 아이디 입니다.');
+                    $('#pw').focus();
+                }else if(res=='EXIST'){
+                    $('#idc').val("false");
+                    alert('아이디가 이미 존재합니다.');
+                }else{
+                    $('#idc').val("false");
+                    alert('아이디 중복확인 실패하였습니다.');
+                }
+            }
+               , error:function(xhr,textStatus){
+                   $('#idc').val("false");
+                    alert("서버 전송중 오류가 발생하였습니다.\n\n잠시후 다시 시도해 주세요.");
+            }
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+//텍스트 박스가 비어있으면 회원가입 x
+function check(){
+    if(document.getElementById("id").value==""){
+        alert("아이디를 입력하세요");
+        return;
+    }
+    if(document.getElementById("pw").value==""){
+        alert("비밀번호를 입력하세요");
+        return;
+    }
+    if(document.getElementById("pw2").value==""){
+        alert("비밀번호 확인을 해주세요");
+        return;
+    }
+    if(document.getElementById("name").value==""){
+        alert("이름을 입력해주세요");
+        return;
+    }
+    if(document.getElementById("email").value==""){
+        alert("이메일을 입력해주세요");
+        return;
+    }
+    frm.submit(); //직접 submit()이라는 메소드를 호출. 액션을 들고 가줌
+}
+
+$(function()
+{
+//비밀번호 확인
+   $('#pw2').blur(function(){
+      if($('#pw').val() != $('#pw2').val()){
+          if($('#pw2').val()!=''){
+              alert("비밀번호가 일치하지 않습니다.");
+              $('#pw2').val('');
+             $('#pw2').focus();
+          }
+       }
+   })
+});
+
+
+
+  var empJ = /\s/g;
+
+ var idJ = /^[a-z0-9]{4,12}$/;
+
+
+  var pwJ = /^[A-Za-z0-9]{6,12}$/;
+
+  var nameJ = /^[가-힣]{2,6}$/;
+
+  var phoneJ = /^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$/;
+
+
+  $("#name").blur(function() {
+    if (nameJ.test($(this).val())) {
+      console.log(nameJ.test($(this).val()));
+      $("#name_check").text('');
+    } else {
+      $('#name_check').text('이름을 확인해주세요.');
+      $('#name_check').css('color', 'red');
+    }
+  });
+
+
+  $("#pw").blur(function() {
+    if (pwJ.test($(this).val())) {
+      console.log(pwJ.test($(this).val()));
+      $("#pw_check").text('');
+    } else {
+      $('#pw_check').text('비밀번호는 6자리 이상 12자리 이하입니다.'); 
+      $('#pw_check').css('color', 'red');
+      $('#pw').val(''); //비밀번호가 조건을 충족 안햇을때 리셋
+       $('#pw').focus();
+    }
+  });
+
+
+  $("#pw2").blur(function() {
+    if (pwJ.test($(this).val())) {
+      console.log(pwJ.test($(this).val()));
+      $("#pw2_check").text('');
+    } else {
+
+    }
+  });
+
+
+  function ch(pw,pw2,n,t){
+    if(pw==null){
+    }
+    if(pw!=pw2){
+    }else{
+    }
+  }
+  function checkIt(f){
+
+
+  var text_id = f.id.value;
+  text_id=text_id.trim()
+
+  var text_password = f.password.value;
+  text_password=text_password.trim();
+
+
+  var text_password2 = f.password2.value;
+  text_password2=text_password2.trim();
+
+
+  var text_name = f.name.value;
+   text_name=text_name.trim();
+
+
+  var text_tel = f.tel.value;
+     text_tel=text_tel.trim();
+     if(text_password!=text_password2){
+         alert("비밀번호를 다시 확인해 주세요.");
+         return false;
+     }
+     if (text_id==''|| text_password==''|| text_name==''|| text_tel==''){
+         alert("빈 항목이 존재합니다.");
+         return false;
+     }
+
+
+  var text_old_password = f.old_password.value;
+  text_password=text_old_password.trim();
+
+  var text_new_password = f.new_password.value;
+  text_new_password=text_new_password.trim();
+
+  var text_new_password2 = f.new_password2.value;
+   text_new_password2=text_new_password2.trim();
+
+   alert(text_password==text_password2);
+   if(text_password==text_password2){
+       alert("비밀번호를 다시 확인해 주세요.");
+       return false;
+   }else{
+     alert(text_password==text_password2);
+     return false;
+   }
+   if(text_password=="11"){
+       alert("비밀번호를 다시 확인해 주세요.");
+       return false;
+   }
+   if(text_new_password!=text_new_password2){
+       alert("비밀번호를 다시 확인해 주세요.");
+       return false;
+   }
+   if (text_id==''|| text_password==''|| text_name==''|| text_tel==''){
+       alert("빈 항목이 존재합니다.");
+       return false;
+   }
+   return true;
+ }
+
+
+
+  $(document).ready(function(){
+  $('.main i').on('click',function(){
+      $('input').toggleClass('active');
+      if($('input').hasClass('active')){
+        $(this).attr('class',"fa fa-eye-slash fa-lg")
+        .prev('input').attr('type',"text");
+      }else{
+        $(this).attr('class',"fa fa-eye fa-lg")
+        .prev('input').attr('type','password');
+      }
+  });
+});
+$(document).ready(function() {
+    $(document).on("click","#button1", function(event){
+      var input_value = $("input[name='id']").val();
+      var json_data = JSON.stringify(input_value);
+      if(!input_value) {
+        alert("아이디를 입력하세요");
+        $("input[name='id']").focus();
+        return false;
+      }
+      event.preventDefault();
+      $.ajax({    //create an ajax request to display.php
+        type: "POST",
+        data: $("form").serialize(),
+        url: "../../php/login/idCheck.php",
+        //dataType: "json",   //expect html to be returned
+        success: function(result){
+          console.log(result);
+          if(result=="사용가능한 아이디 입니다."){
+            id_checks="Y";
+          }
+          else{
+            id_checks="N";
+          }
+          alert(result);
+        }
+
+      });
+    });
+  });
+  </script>
+  <style>
+    div.main i{
+      position: absolute;
+      left: 93%;
+      top: 14px;
+      color: black;
+    }
+  </style>
+  
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<%- include('head') %> 
+<body>
+   <!--::header part start::-->
+   <%- include('header') %> 
+    <!-- Header part end-->
+
+    <link rel="stylesheet" href="./css/board_detail.css">
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item text-center">
+                            <h2>공지사항</h2>
+                            <p>Notice</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+<!--================ 공지사항 상세보기==================-->
+    </br>
+    <section class="contact-section">
+        <div class="container">
+            <form action="#" method='post'>
+                <h3 class="title_text"><%=list[0].notice_title %></h3>
+                </br>
+                </br>
+                <h4 class="de_writer">작성자 <%=list[0].notice_writer %></h4>
+                <h6 class="de_comnum">　|　조회수 <%=list[0].notice_view %></h6>
+                <h6 class="de_date"><%=list[0].notice_date %></h6>
+                </br>
+                <div class="de_content">
+                    <textarea name="content" id="summernote" class="single-textarea"  placeholder="내용" readOnly><%=list[0].notice_content %></textarea>
+                </div>
+                </br>
+                <% if(list[0].notice_writer===user){ %>
+                <div class="de_button">
+                    <a type=submit class="de_btn" onclick="javascript:location.replace('./notice_delete?num=<%=list[0].notice_no %>');" style="font-size: 100%; float:right; margin-left:1%" >삭제</a>
+                    <a type=submit class="de_btn" id="update" onclick="javascript:location.replace('./notice_update?num=<%=list[0].notice_no %>');" style="font-size: 100%; float:right; " >수정</a>
+                </div>
+                <% } %>
+                </br>
+                </br>
+            </form>
+        </div>
+    </section>
+
+    <!--================ 공지사항 상세보기 ==================-->
+    <%- include('footer') %> 
+</body>
+</html>

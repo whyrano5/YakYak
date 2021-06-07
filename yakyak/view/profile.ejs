@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>내 정보</title>
+    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="icon" href="./img/yak_small_logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id = "everbody">
+    <div id="jb-container4">
+      <div id="jb-header4">
+        <img src="./img/yak_logo.png"alt="이미지 오류" onclick="location.href='/index' " width="300" height="120">
+        <h2 style="font-family:돋움 ;">내 정보</h2>
+      </div>
+      </div>
+      <div id ="can">
+      <div id="jb-content4">
+        <br>
+        <img src="/img/user.png" alt="이미지 오류" width="200" height="200">
+        <br><br>
+        <input type="text" name="id" id ="id" placeholder=<%= user %> readOnly/> 님
+        <br><br>
+      </div>
+    </div>
+    <div id = "bu">
+    <input type="submit" name="ok" id = "ok"  onclick="location.href='/member' " value="정보 수정">
+    <input type="submit" name="cancel" id = "cancel" onclick="location.href='/naga' " value="회원 탈퇴">
+  </div>
+  </div>
+  </body>
+</html>

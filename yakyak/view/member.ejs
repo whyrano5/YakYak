@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML Layouts</title>
+    <link rel="stylesheet" href="./css/member.css">
+    <link rel="icon" href="./img/yak_small_logo.png">
+    <!-- Fontawesome -->
+    <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  </head>
+  <body>
+    <div id="jb-container4">
+      <form action="/member" method="post">
+        <div id="jb-header4">
+          <a href="./index"><img src="./img/yak_logo.png"alt="이미지 오류" onclick="location.href='/index' "width="300" height="120"></a>
+          <h2>회원 정보 변경</h2> 
+        </div>
+        <div id="jb-content4">
+          <input type="text" name="id" id ="id" value= "<%= user %>" disabled style="color:black;  margin:0px;" /> <br>
+          <br><input type="password" name="pw" id = "pw" placeholder="비밀번호"> <br>
+          <br><input type="text" name="name" id = "name" value="<%= list[0].name %>" /><br><br>
+          <input type="email" name="email" id = "email" value="<%= list[0].email %>" /><br><br>
+          <input type="submit" name="join" id = "join" value="변경"/>  
+          <input type="button" name="cancel" id = "cancel" onclick="location.href='/profile' " value="취소">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

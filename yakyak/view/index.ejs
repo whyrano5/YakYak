@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+    <%- include('head') %> 
+    <body>
+        <!-- Header part end-->
+        <%- include('header') %> 
+        <!-- banner part start-->
+        <section class="banner_part">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="banner_text text-center">
+                            <div class="banner_text_iner">
+                                <div class="slideshow-container">
+                                    <!-- Full-width images with number and caption text -->
+                                    <div class="mySlides fade">
+                                    <div class="numbertext">1 / 4</div>
+                                    <img src="./img/slide/slideshow1.jpg" style="width:100%">
+                                    </div>
+                            
+                                    <div class="mySlides fade">
+                                    <div class="numbertext">2 / 4</div>
+                                    <img src="./img/slide/slideshow2.jpg" style="width:100%">
+                                    </div>
+                            
+                                    <div class="mySlides fade">
+                                    <div class="numbertext">3 / 4</div>
+                                    <img src="./img/slide/slideshow3.jpg" style="width:100%">
+                                    </div>
+                            
+                                    <div class="mySlides fade">
+                                    <div class="numbertext">4 / 4</div>
+                                    <img src="./img/slide/slideshow4.jpg" style="width:100%">
+                                    </div>
+                            
+                                    <!-- Next and previous buttons -->
+                                    <a class="prev" onclick="moveSlides(-1)">&#10094;</a>
+                                    <a class="next" onclick="moveSlides(1)">&#10095;</a>
+                                </div>
+                                <br/>
+                            
+                                <!-- The dots/circles -->
+                                <div style="text-align:center">
+                                    <span class="dot" onclick="currentSlide(0)"></span>
+                                    <span class="dot" onclick="currentSlide(1)"></span>
+                                    <span class="dot" onclick="currentSlide(2)"></span>
+                                    <span class="dot" onclick="currentSlide(3)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- banner part end-->
+
+        <!--::industries start::-->
+        <section class="about_us section_padding">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about_img">
+                            <img src="./img/yak_small_logo.png" style="width: 90%; height: 90%;" alt="#">
+                        </div>
+                    </div>  
+                    <div class="col-lg-6">
+                        <div class="about_text">
+                            <h5>소개글</h5>
+                            <h2>약 리뷰 커뮤니티 '약약'</h2>
+                            <p>안녕하십니까 약 리뷰 커뮤니티 '약약' 관리자 입니다.</p>
+                            <p>저희 커뮤니티에서는 의약품을 소개하고 있으며 유저들간의 리뷰를 통한 소통으로 더 나은 의약품 소개를 목표로 하고 있습니다.</p>
+                            <p>저희 '약약'의 로고는 약의 한글 발음의 영어 표기법 첫 자를 딴 Y를 이용하여 따뜻한 오렌지컬러와 신뢰의 블루컬러를 믹스하여 의약품의 편안함과 신뢰성을 높이고자 표현했습니다.</p>
+                            <p>커뮤니티를 이용하시면서 문의사항이 있으시면 언제든지 1:1 문의 부탁드립니다. 감사합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="best_services section_padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="section_tittle text-center">
+                            <h2>We offered best services</h2>
+                            <br>Our YakYak community provides the drug information that customers want.</br> Communication between users is also possible.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single_ihotel_list">
+                            <img src="./img/services_1.png" alt="">
+                            <h3> <a href="./about"> Information</a></h3>
+                            <p>We will be able to give you a lot of information.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single_ihotel_list">
+                            <img src="./img/services_2.png" alt="">
+                            <h3> <a href="./com_review"> Review </a></h3>
+                            <p>Users' reviews will tell you about the drug.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single_ihotel_list">
+                            <img src="./img/services_3.jpg" alt="">
+                            <h3> <a href="./com_free"> Communication </a></h3>
+                            <p>You can communicate with a lot of people.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single_ihotel_list">
+                            <img src="./img/services_4.jpg" alt="">
+                            <h3> <a href="./com_question"> Q&A </a></h3>
+                            <p>Users will answer your questions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+        <!--::industries end::-->
+        <%- include('footer') %> 
+
+
+    </body>
+
+</html>

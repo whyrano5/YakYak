@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+    <%- include('head') %> 
+    <body>
+        <!-- Header part end-->
+        <%- include('header') %> 
+        <!-- breadcrumb start-->
+        <section class="breadcrumb breadcrumb_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb_iner">
+                            <div class="breadcrumb_iner_item text-center">
+                                <h2>리뷰게시판</h2>
+                                <p>Review Bulletin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb start-->
+
+
+        <!--================ 리뷰게시판 ==================-->
+        </br></br></br></br>
+        <section class="contact-section">
+            <div class="container">
+                <div class="row">
+                    <table id="story_table" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>약이름</th>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>내용</th>
+                                <th>조회수</th>
+                                <th>날짜</th>
+                                <th>댓글수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = (page * page_num) - page_num; i < (page * page_num); i++) {
+                                if(i > length){
+                                    i++;
+                                }
+                                else{ %>
+                                    <tr>
+                                        <td><%=list[i].review_no %></td>
+                                        <td><%=list[i].review_yakname %></td>
+                                        <td><a id="review_num" href="review_detail?num=<%=list[i].review_no %>"><%=list[i].review_title %></a></td>
+                                        <td><%=list[i].review_writer %></td>
+                                        <td><%=list[i].review_content %></td>
+                                        <td><%=list[i].review_view %></td>
+                                        <td><%=list[i].review_date %></td>
+                                        <td><%=list[i].review_comment %></td>
+                                        <td><a href='/delete/<%= list[i].r_index %>' >DELETE</a></td>
+                                    </tr>
+                                <% }
+                            } %>
+                        </tbody>
+                    </table>
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="/review?page=<%= 1 %>">&laquo;</a></li>
+                        <% 
+                            var total = parseInt(list.length/page_num)+1;
+                            if(total <= 1){%>
+                                <li class="page-item"><a style="background-color:lightgray;" href="/review?page=1">1</a></li>
+                            <%}
+                            else if(page<4){
+                                for(var k = 1; k < 8; k++){
+                                    if(k<=total&&k>0){%>
+                                        <li class="page-item"><a <% if(page==k){%> style="background-color:lightgray;" <%} %> href="/review?page=<%= k %>"><%= k %></a></li>
+                                    <%}
+                                    else{
+                                        continue;;
+                                    }
+                                }
+                            }
+                            else if(page+4>total){
+                                for(var k = total-7 ; k < total+1 ; k++){
+                                    if(k<=total&&k>0){%>
+                                        <li class="page-item"><a <% if(page==k){%> style="background-color:lightgray;" <%} %> href="/review?page=<%= k %>"><%= k %></a></li>
+                                    <% }
+                                    else{
+                                        continue;
+                                    }
+                                }
+                                }
+                            else{
+                                for(var k = parseInt(page)-3; k < parseInt(page)+4; k++){%>
+                                    <li class="page-item"><a <% if(page==k){%> style="background-color:lightgray;" <%} %> href="/review?page=<%= k %>"><%= k %></a></li>
+                                <% }
+                            }
+                            %>
+                        <li class="page-item"><a class="page-link" href="/review?page=<%= total %>">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form_btn">
+                <a href="/review_write" class="genric-btn info radius" style="font-size: 100%; float:right; margin-right:10%;" > 글쓰기</a>
+            </div>
+        </div>
+
+        
+
+
+
+        <!--================ 리뷰게시판 ==================-->
+
+        <!-- footer part start-->
+        </br></br></br></br>
+ 
+        <!-- footer part end-->
+        <%- include('footer') %> 
+
+    </body>
+
+</html>

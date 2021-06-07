@@ -1,0 +1,119 @@
+#jb-container4
+{
+  width: 500px;
+  margin: 10px auto;
+  padding: 10px;
+}
+#jb-header4 {
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align:center;
+}
+#jb-content4
+{
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align:center;
+}
+
+#id {
+  border: 1px solid skyblue;
+  border-radius: Opx;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 40px;
+  top : -20px;
+  width: 61%;
+}
+#pw {
+border: 1px solid skyblue;
+border-radius: Opx;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+height: 40px;
+top : -20px;
+width: 61%;
+}
+#pw2 {
+border: 1px solid skyblue;
+border-radius: Opx;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+height: 40px;
+top : -32px;
+width: 61%;
+}
+#name {
+border: 1px solid skyblue;
+border-radius: Opx;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+height: 40px;
+top : -23px;
+width: 61%;
+}
+#email {
+border: 1px solid skyblue;
+border-radius: Opx;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+height: 40px;
+top : -15px;
+width: 61%;
+}
+#join{
+border:1px solid skyblue;
+background-color: rgba(0,0,0,0);
+color: skyblue;
+padding: 5px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+
+height: 50px;
+
+
+width: 30%;
+}
+#cancel{
+border:1px solid skyblue;
+background-color: rgba(0,0,0,0);
+color: skyblue;
+padding: 5px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+
+height: 50px;
+width: 30%;
+}
+#join:hover{
+color:white;
+background-color:skyblue;
+}
+#cancel:hover
+{
+color:white;
+background-color:skyblue;
+}
+@media ( max-width: 480px ) {
+  #jb-container4 {
+    width: auto;
+  }
+  #jb-content4 {
+    float: none;
+    width: auto;
+  }
+}
