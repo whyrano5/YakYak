@@ -7,7 +7,8 @@ var router = express.Router();
 router.get('/', function (req, res) {
     req.session.destroy(function(err){
         console.log("세션 삭제");
-        res.redirect('/index');
+        res.send('<script>alert("로그아웃되었습니다.");location.href="/index";</script>');
+        // res.redirect('/index');
     });
 });
 

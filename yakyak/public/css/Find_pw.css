@@ -47,8 +47,8 @@ border-top-left-radius: 5px;
 border-bottom-left-radius: 5px;
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
-height: 40px;
-top : 10px;
+height: 40px; 
+top : -20px;
 width: 60%;
 }
 #Find_Pbtn{

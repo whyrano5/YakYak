@@ -8,10 +8,6 @@ var db_config = require(path.join(__dirname,'../../config/database.js'));
 var conn = db_config.init();
 db_config.connect(conn);
 
-function a(){
-    alert("aaa");
-    }
-
 router.get('/', function(req, res, next){
     if(req && req.session && req.session.count) { 
         // 세션이 존재하는 경우
@@ -31,17 +27,16 @@ router.post('/', function (req, res) {
     console.log(body);
     // console.log(typeof(parseInt(count)));
 
-    var sqls = 'SELECT id FROM information WHERE name=? and email=?';
+    var sqls = 'SELECT id FROM information AS id WHERE name=? and email=?';
     var paramss = [ body.nf, body.ef ];
+
     console.log(sqls);
     conn.query(sqls,paramss, function(err, rows, fields) {
-        if(err) {
-            console.log('query is not excuted. insert fail...\n' + err);
-            a();
-        }
+        if(err) console.log('query is not excuted. insert fail...\n' + err);
         else {
             console.log(rows[0]);
-            res.redirect('/login');
+            res.send('<script>alert("아이디는'+rows[0].id+' 입니다.");location.href="/login";</script>');
+            // res.redirect('/login');
         }
     });
 });

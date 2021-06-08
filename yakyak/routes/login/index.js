@@ -13,7 +13,6 @@ router.get('/', function (req, res) {
         // 세션이 존재하는 경우
         console.log("세션 존재!");
         res.render('login.ejs',{user:req.session.uid});
-
     } else { 
         // 세션이 존재하지 않는 경우
         var id='';
@@ -54,6 +53,20 @@ router.post('/', function (req, res) {
     var sql = 'SELECT pw FROM information where id=?';
     var params = [body.id, body.pw];
     console.log(sql);
+    if (body.id == '' && body.pw != '')
+    {
+        res.send('<script>alert("아이디를 입력해주세요. ");location.href="/login";</script>');
+    }
+    else if(body.pw == '' && body.id != '')
+    {
+        res.send('<script>alert("비밀번호를 입력해주세요. ");location.href="/login";</script>');
+
+    }
+    else if (body.id == '' && body.pw == '')
+    {
+        res.send('<script>alert("아이디와 비밀번호를 입력해주세요. ");location.href="/login";</script>');
+    }
+    else{
     conn.query(sql, body.id, function(err, result) {
         if(err) console.log('query is not excuted. insert fail...\n' + err);
         else {
@@ -65,16 +78,18 @@ router.post('/', function (req, res) {
                 req.session.login = true;
                 req.session.uid = body.id;
                 console.log(req.session.login);
-                req.session.count = 1;
+                req.session.count = 1;``
                 req.session.save(function(){
-                    res.render('./index',{user:req.session.uid});
+                    res.send('<script>alert("환영합니다.");location.href="/index";</script>');
+                    //res.render('./index',{user:req.session.uid});
                 });
             }else{
-
+               res.send('<script>alert("정보가 일치하지 않습니다.");location.href="/login";</script>');
             }
             // <script type="text/javascript">alert("회원가입이 완료되었습니다.");</script>
-
         }
-    });
+        });
+        }
+        
 });
 module.exports = router;

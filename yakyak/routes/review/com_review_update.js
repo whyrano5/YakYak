@@ -46,7 +46,8 @@ router.post('/', function (req, res) {
         if(err) console.log('query is not excuted. insert fail...\n' + err);
         else {
             console.log("글 수정 완료");
-            res.redirect('/review_detail?num='+n.num);
+            res.send('<script>alert("수정되었습니다.");location.href="/review_detail?num='+n.num+'";</script>');
+            // res.redirect('/review_detail?num='+n.num);
         }
     });
 });

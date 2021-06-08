@@ -75,7 +75,7 @@ router.post('/', function (req, res) {
             res.redirect('/sign');
         });
     }
-    else 
+    else ``
     {
     var sql = 'INSERT INTO information VALUES(?, ?, ?, ?)';
     var params = [body.id, encryptResult, body.name, body.email];
@@ -84,7 +84,8 @@ router.post('/', function (req, res) {
         if(err) console.log('query is not excuted. insert fail...\n' + err);
         else {
             // <script type="text/javascript">alert("회원가입이 완료되었습니다.");</script>
-            res.redirect('/login');
+            //res.redirect('/login');
+            res.send('<script>alert("회원가입이 완료되었습니다.");location.href="/login";</script>');
             }
         });
     }

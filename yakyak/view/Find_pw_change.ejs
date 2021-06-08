@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>비밀번호 변경</title>
+    <link rel="stylesheet" href="./css/Find_id.css">
+    <link rel="icon" href="./img/yak_small_logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="jb-container1">
+      <div id="jb-header1">
+        <a href="./index"><img src="./img/yak_logo.png" alt="이미지 오류" width="300" height="120"></a>
+        <h2>비밀번호 변경</h2>
+      </div>
+      <form action="/New_pw" method='post'>
+        <div id="jb-content1">
+          <input type="text" name="nf" id ="nf" placeholder="변경할 비밀번호" />
+          <br>
+          <input type="text" name="ef" id = "ef" placeholder="변경할 비밀번호 확인" />
+          <br>
+          <input type="submit" name="Find_Ibtn" id = "Find_Ibtn" onclick="check();" value="변경">
+          <input type="submit" name="Find_Ibtn" id = "Find_Ibtn" value="취소">
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    function check(){
+        if(document.getElementById("pw").value==""){
+            alert("비밀번호를 입력하세요");
+            return;
+        }
+        if(document.getElementById("pw2").value==""){
+            alert("비밀번호 확인을 해주세요");
+            return;
+        }
+        frm.submit(); //직접 submit()이라는 메소드를 호출. 액션을 들고 가줌
+    }
+  </script>
+</html>

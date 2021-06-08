@@ -73,8 +73,9 @@ router.post('/', function (req, res) {
                 if(err) console.log('query is not excuted. insert fail...\n' + err);
                 else {
                     console.log("뷰 업데이트 완료");
+                    res.send('<script>alert("댓글이 작성되었습니다.");location.href="/review_detail?num='+n.num+'";</script>');
                     // <script type="text/javascript">alert("회원가입이 완료되었습니다.");</script>
-                    res.redirect('review_detail?num='+n.num);
+                    // res.redirect('review_detail?num='+n.num);
                 }
             });
             // <script type="text/javascript">alert("회원가입이 완료되었습니다.");</script>

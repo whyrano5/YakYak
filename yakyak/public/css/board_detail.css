@@ -9,6 +9,7 @@
     display: inline;
 }
 
+.de_comment_writer,
 .de_comment_content,
 .de_comment_date{
     display: inline;
@@ -62,4 +63,11 @@
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px; 
     border-bottom-right-radius: 5px;
+  }
+
+  .pill_{
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-top:10px;
+      line-height: 40px;
   }

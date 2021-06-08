@@ -76,7 +76,8 @@ router.post('/', function (req, res) {
             }
             else {
                 console.log("회원 정보 수정 완료");
-                res.redirect('/member');   
+                res.send('<script>alert("회원 정보가 수정되었습니다.");location.href="/profile";</script>');
+                // res.redirect('/member');   
             }
         });
     }

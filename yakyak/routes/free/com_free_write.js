@@ -20,7 +20,8 @@ router.get('/', function (req, res) {
     } else { 
         // 세션이 존재하지 않는 경우
         var id='';
-        res.render('com_free_write.ejs', {user:id});
+        res.send('<script>alert("로그인이 필요한 서비스입니다.");location.href="/free?page=1";</script>');
+        // res.render('com_free_write.ejs', {user:id});
     }
 });
 router.post('/', function (req, res) {

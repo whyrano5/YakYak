@@ -36,15 +36,20 @@
                             <td><legend style="font-size: 1.5em; line-height:2.5em;">글쓰기</legend></td>
                         </tr>
                         <tr title="pill_" style="height:3.5em;">
-                            <select name="약 종류" id="">
-                                <option value="XC">(약 종류 선택 안함)</option>
-                                <% for(var i = 0; i<103; i++){ %>
-                                    <option value="<%= rows2[i].분류명 %>"><%= rows2[i].분류명 %></option>
-                                <% } %>
-                            </select>
+                            <td>
+                                <select class="form-control" name="yak_type" id="yak_type">
+                                    <option value="XC">(약 종류 선택 안함)</option>
+                                    <% for(var i = 0; i<rows2.length; i++){ %>
+                                        <option value="<%= rows2[i].품목명 %>"><%= rows2[i].품목명 %></option>
+                                    <% } %>
+                                </select>
+                            </br>
+                            </td>
                         </tr>
                         <tr style="height:3.5em;">
-                        <input class="single-input" type="text" id="title" name="title" placeholder="제목을 입력해 주세요. "></br>
+                            <td>
+                                <input class="single-input" type="text" id="title" name="title" placeholder="제목을 입력해 주세요. "></br>
+                            </td>
                         </tr>
                         <tr style="margin-top:0.05em; height:20em;">
                             <td>
