@@ -52,25 +52,16 @@ router.get('/', function(req, res, next){
         console.log('Query result: ', rows[0].count);
         count = rows[0].count;
     });
-    var sql3 = 'SELECT COUNT(*) AS count FROM review_comment where review_no=?';
-    console.log(sql3);
-    p=parseInt(n.num);
-    conn.query(sql3, p, function(err, rows, fields){
-        count2 = rows[0].count;
-    });
-});
-
-router.post('/', function (req, res) {
-    console.log("댓글");
-    var body = req.body;
-    // console.log(body);
-    var name=req.session.uid;
-    // console.log(typeof(parseInt(count)));
+    var sql3 = 'SELECT COUNT(*) AS count FROM review_comment where review_no=?'; console.log(sql3);}); p=parseInt(n.num) conn.query(sql3, p, 
+    function(err, rows, fields) {router.post('/', function (req, res) { console.log("댓글"); var body = req.body;
+        // console.log('대앳글수: ', rows[0].count); // console.log(body);
+        count2 = rows[0].count; var name=req.session.uid;
+    });    // console.log(typeof(parseInt(count)));
 
     var sql = 'INSERT INTO review_comment VALUES(?, ?, ?, ?, NOW())';
     var sqls = 'UPDATE review set review_comment=? WHERE review_no=?';
     var params = [parseInt(count)+1, parseInt(n.num), name, body.editor ];
-    var paramss = [parseInt(count2)+1, parseInt(n.num) ];
+    var paramss = [parseInt(count)+1, parseInt(n.num) ];
     console.log(sql);
     conn.query(sql, params, function(err) {
         if(err) console.log('query is not excuted. insert fail...\n' + err);

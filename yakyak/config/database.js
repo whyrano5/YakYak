@@ -1,6 +1,6 @@
 var mysql = require('mysql2');
 var db_info = {
-    user: 'root',
+    user: 'plz',
     password: '1234',
     database: 'yakyak'
 }

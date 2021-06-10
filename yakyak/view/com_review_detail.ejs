@@ -72,7 +72,7 @@
                         <div class="col-9 col-md-10 col-lg-11">
                             <div class="comment-show">
                                 <div class="comment-text mb-3"><h4 class="de_comment_content"><%= comment[i].review_content %></h4><h6 class="de_comment_date"><%= comment[i].review_date%></h6></div> <!-- 1-4 -->
-                                <% if(comment[0].review_writer===user){ %>
+                                <% if(comment[i].review_writer===user){ %>
                                     <div class="de_button">
                                         <a type=submit class="de_btn" onclick="javascript:location.replace('./review_comment_delete?num=<%=list[0].review_no %>&&i=<%= comment[i].review_index %>');" style="font-size:100%; float:right; margin-left:1%" >삭제</a>
                                     </div>

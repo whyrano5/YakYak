@@ -36,7 +36,7 @@
                                 <th>내용</th>
                                 <th>조회수</th>
                                 <th>날짜</th>
-                                <th>댓글수</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -53,7 +53,6 @@
                                     <td><%=list[i].notice_content %></td>
                                     <td><%=list[i].notice_view %></td>
                                     <td><%=list[i].notice_date %></td>
-                                    <td><a href='/delete/<%= list[i].r_index %>' >DELETE</a></td>
                                 </tr>
                                 <% }
                             } %>
@@ -95,9 +94,6 @@
                         <li class="page-item"><a class="page-link" href="/notice?page=<%= total %>">&raquo;</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="form_btn">
-                <a href="/notice_write" class="genric-btn info radius" style="font-size: 100%; float:right; margin-right:10%;" > 글쓰기</a>
             </div>
         </div>
 

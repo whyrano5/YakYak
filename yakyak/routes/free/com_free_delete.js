@@ -23,7 +23,7 @@ router.get('/', function(req, res, next){
         else {
             console.log("글 삭제 완료");
             res.send('<script>alert("삭제되었습니다.");location.href="/login";</script>');
-            res.redirect('/free');
+            res.redirect('/free?page=1');
         }
     });
 });

@@ -22,7 +22,7 @@ router.get('/', function(req, res, next){
         if(err) console.log('query is not excuted. insert fail...\n' + err);
         else {
             console.log("글 삭제 완료");
-            res.redirect('/question');
+            res.redirect('/question?page=1');
         }
     });
 });
