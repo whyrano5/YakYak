@@ -32,38 +32,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="event_slider owl-carousel" >
-                            <%for(var i = 0; i < 3; i++){%>
-                            <div class="single_event_slider">
-                                <div class="row justify-content-end" style="background-image: url(<%= rows2[i].큰제품이미지%>); background-size: contain;">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="event_slider_content">
-                                            <h5>리뷰량 <%= i+1%>위, <%= rows2[i].전문일반구분%>, <%=rows2[i].분류명%></h5>
-                                            <h2><%= rows2[i].품목명 %></h2>
-                                            <p><%= rows2[i].업소명 %></p>
-                                            <p>성상: <span><%= rows2[i].성상 %></span> </p>
-                                            <p>의약품제형: <span><%= rows2[i].의약품제형 %></span> </p>
-                                            <div class="rating">
-                                                <span>최근리뷰:</span>
-                                                <div class="place_review">
-                                                    <a href="#"><i class="fas fa-star"></i></a>
-                                                    <a href="#"><i class="fas fa-star"></i></a>
-                                                    <a href="#"><i class="fas fa-star"></i></a>
-                                                    <a href="#"><i class="fas fa-star"></i></a>
-                                                    <a href="#"><i class="fas fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="btn_1">해당 제품 전체 리뷰 보러가기</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <%}%>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
         <!--인기 약 제품 정보 end-->
